@@ -13,7 +13,7 @@ wn.tracer(0)
 score_a = 0
 score_b = 0
 
-# Paddle A
+
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)
 paddle_a.shape("square")
@@ -26,7 +26,7 @@ paddle_a.goto(-350, 0)
 
 
 
-# Paddle B
+
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
@@ -35,7 +35,7 @@ paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
 
-# Ball
+
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("circle")
@@ -55,7 +55,7 @@ ball2.goto(0, 0)
 ball2.dx = -0.15
 ball2.dy = -0.15
 
-# Pen
+
 pen = turtle.Turtle()
 pen.speed(0)
 pen.color("white")
@@ -65,35 +65,34 @@ pen.goto(0, 260)
 pen.write("Player A: 0 Player B: 0 ", align="center", font=("courier", 14, "normal"))
 
 
-# Function for paddle A
 def paddle_a_up():
     y = paddle_a.ycor()
     y += 20
     paddle_a.sety(y)
 
 
-# Function for down
+
 def paddle_a_down():
     y = paddle_a.ycor()
     y -= 20
     paddle_a.sety(y)
 
 
-# Function for paddle B
+
 def paddle_b_up():
     y = paddle_b.ycor()
     y += 20
     paddle_b.sety(y)
 
 
-# Function for down
+
 def paddle_b_down():
     y = paddle_b.ycor()
     y -= 20
     paddle_b.sety(y)
 
 
-# Keyboard binding
+
 wn.listen()
 wn.onkeypress(paddle_a_up, "w")
 wn.onkeypress(paddle_a_down, "s")
@@ -111,7 +110,7 @@ while True:
 
     ball2.setx(ball2.xcor() + ball2.dx)
     ball2.sety(ball2.ycor() + ball2.dy)
-    # Border checking
+
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
@@ -173,7 +172,7 @@ while True:
 
 
 
-   # ball and paddle collision
+
 
     if (340 < ball.xcor() < 350) and (paddle_b.ycor() - 50 < ball.ycor() < paddle_b.ycor() + 50):
         ball.setx(340)
@@ -198,7 +197,7 @@ while True:
 
 
 
-    # AI Player
+
     if ball.xcor() >ball2.xcor():
 
         if paddle_b.ycor() < ball.ycor() and abs(paddle_b.ycor() - ball.ycor()) > 10:
